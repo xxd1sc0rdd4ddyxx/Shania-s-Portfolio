@@ -3,13 +3,16 @@ Willkommen in meinem Portfolio-Repository! Hier findest du eine Übersicht über
 
 🔍 Inhalte
 🏠 Home: Eine Vorstellung meiner Person – Hobbys, Fähigkeiten, Berufsbezeichnung und ein paar persönliche Infos.
+
 💼 Projekte: Eine Sammlung meiner Arbeiten und Projekte.
+
 🖼️ Archiv: Eine Bildergalerie mit weiteren Einblicken.
+
 🌍 Sprache: Oben rechts kannst du zwischen Deutsch und Englisch wechseln.
+
 🚀 Technologien
 Dieses Portfolio wurde mit folgenden Technologien erstellt:
 
-[Hier deine verwendeten Technologien auflisten, z. B. HTML, CSS, JavaScript, React, etc.]
 📷 Vorschau
 
 ![Portfolio Vorschau](images/vorschau.jpg)
