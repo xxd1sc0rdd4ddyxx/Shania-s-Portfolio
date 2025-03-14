@@ -12,7 +12,7 @@ Dieses Portfolio wurde mit folgenden Technologien erstellt:
 [Hier deine verwendeten Technologien auflisten, z. B. HTML, CSS, JavaScript, React, etc.]
 📷 Vorschau
 
-![Portfolio Vorschau](images/vorschau.jpg)
+![Portfolio Vorschau](https://https://github.com/xxd1sc0rdd4ddyxx/Shania-s-Portfolio/edit/main/images/vorschau.jpg)
 
 🙌 Credits
 Inspiration von HTML5UP.
