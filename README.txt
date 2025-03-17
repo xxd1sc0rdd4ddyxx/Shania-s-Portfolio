@@ -12,7 +12,7 @@ Willkommen in meinem Portfolio-Repository! Hier findest du eine Übersicht über
 🌍 Sprache: Oben rechts kannst du zwischen Deutsch und Englisch wechseln.
 
 📷 Vorschau
-![Portfolio Vorschau](vorschau.jpg)
+![Portfolio Vorschau](https://github.com/xxd1sc0rdd4ddyxx/Shania-s-Portfolio/vorschau.jpg)
 
 🙌 Credits
 Design-Template von HTML5UP.
