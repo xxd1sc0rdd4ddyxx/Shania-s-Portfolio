@@ -15,26 +15,25 @@
 			<!-- Header -->
 			<header id="header">
 				<a href="https://linktr.ee/shaniaskaka">
-					<img src="images/Logo.gif" alt="Logo" style="height: 50px;">
+					<img src="images/logo.gif" alt="Logo" style="height: 50px;">
 				</a>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li>
-								<a href="#">Projekte</a>
+								<a href="#" id="navProjects">Projekte</a> <!-- ID für Projekte ist da ✅ -->
 								<ul>
 									<li>
-										<a href="#">Lernprojekt</a>
+										<a href="#" id="learnProjectLink">Lernprojekt</a>
 										<ul>
 											<li><a href="ahzos.html" id="ahzosLink">Ahzos</a></li>
 											<li><a href="theshatteredreality.html" id="shatteredRealityLink">The Shattered Reality</a></li>
-											<li><a href="#">Astrabann</a></li>
-											<li><a href="#">Fourth</a></li>
+											<li><a href="astrabann.html" id="astrabannLink">Astrabann</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li><a href="elements.html">Archiv</a></li>
+							<li><a href="archiv.html" id="navArchive">Archiv</a></li> <!-- ID für Archiv ✅ -->
 							<li><a href="#" id="language-toggle" class="button primary">ENG</a></li>
 						</ul>
 					</nav>
@@ -46,7 +45,6 @@
 						<header>
 							<h2 id="bannerHeader">Hallihallo, ich bin Shania</h2>
 							<p id="bannerDescription">Kreatives Chaos mit System.<br/>Code. Design.</p>
-
 						</header>
 						<span class="image"><img src="images/pic01.jpg" alt="Bildbeschreibung">
 						</span>
@@ -62,19 +60,18 @@
 							<div class="row">
 								<div class="col-4 col-12-medium">
 									<header>
-										<h2>Ich.</h2>
+										<h2 id="oneHeader">Ich.</h2>
 										<p>Debugging my life since 2004.</p>
 									</header>
 								</div>
 								<div class="col-4 col-12-medium">
-									<p>Kreativität in jeder Form.<br/>
+									<p id="oneCreative">Kreativität in jeder Form.<br/>
 										Ich liebe es, zu lesen, zu malen, digital zu zeichnen, Musik zu machen (Gitarre & Piano) und zu häkeln.<br/>
 										. . .</p>
 								</div>
 								<div class="col-4 col-12-medium">
-									<p>Gaming-Obsession.<br/>
-										Meine Lieblingsspiele aller Zeiten: The Legend of Zelda, Age of Empires, Celeste<br/>
-										. . .</p>
+									<p id="oneGaming">Gaming-Obsession.<br/>
+									Meine Lieblingsspiele aller Zeiten: The Legend of Zelda, Age of Empires, Celeste<br/>. . .</p>
 								</div>
 							</div>
 						</div>
@@ -87,7 +84,7 @@
 					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
 					<div class="content">
 						<header>
-							<h2>Katze.</h2>
+							<h2 id="twoHeader">Katze.</h2>
 							<p>Ponyo & Bibbles.</p>
 						</header>
 						<ul class="actions">
@@ -102,10 +99,10 @@
 					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
 					<div class="content">
 						<header>
-							<h2>Gedächtnisanker.</h2>
-							<p>Schaffen. Scheitern. Weitermachen.</p>
+							<h2 id="threeHeader">Gedächtnisanker.</h2>
+							<p id="threeDescription">Schaffen. Scheitern. Weitermachen.</p>
 						</header>
-						<p>Es ist niemals zu spät, etwas Neues zu lernen.
+						<p id="threeQuote">Es ist niemals zu spät, etwas Neues zu lernen.
 							Niemals zu spät, einen Traum weiterzuverfolgen.
 							Niemals zu spät, besser zu werden – in dem, was du liebst.
 							
@@ -130,8 +127,8 @@
 				<section id="four" class="wrapper style1 special fade-up">
 					<div class="container">
 						<header class="major">
-							<h2>Tätigkeit.</h2>
-							<p>meine Skills an der SRH in Heidelberg perfektionieren und meine Stats in Game Dev & Multimedia maxen.</p>
+							<h2 id="fourHeader">Tätigkeit.</h2>
+							<p id="fourDescription">meine Skills an der SRH in Heidelberg perfektionieren und meine Stats in Game Dev & Multimedia maxen.</p>
 						</header>
 						<div class="box alt">
 							<div class="row gtr-uniform">
@@ -197,8 +194,8 @@
 <section id="five" class="wrapper style2 special fade">
     <div class="container">
         <header>
-            <h2>Na, Interesse geweckt?</h2>
-            <p>Kontaktier mich – Bugs fixe ich, Mails lese ich</p>
+            <h2 id="contactHeader">Na, Interesse geweckt?</h2>
+            <p id="contactText">Kontaktier mich – Bugs fixe ich, Mails lese ich</p>
         </header>
         <form id="contactForm" method="POST" action="https://formspree.io/f/xyzeyqnl" class="cta">
             <div class="row gtr-uniform gtr-50">

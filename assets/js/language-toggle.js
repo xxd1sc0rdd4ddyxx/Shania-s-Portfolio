@@ -1,137 +1,224 @@
-// language-toggle.js
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const languageButton = document.getElementById('language-toggle');
-    
-    // Initialisieren der Seite auf Deutsch und Button auf "ENG"
-    setLanguage('DE'); // Standardmäßig auf Deutsch setzen
-    languageButton.textContent = 'ENG'; // Button soll "ENG" für Englisch zeigen
+    if (!languageButton) {
+        console.error("Sprachumschalter nicht gefunden!");
+        return;
+    }
 
-    // Event Listener für den Klick auf den Sprachumschalter
-    languageButton.addEventListener('click', function() {
-        const currentLang = languageButton.textContent;
+    let currentLang = localStorage.getItem('language') || 'DE';
+    setLanguage(currentLang);
+    updateButtonLabel(currentLang);
 
-        if (currentLang === 'ENG') {
-            languageButton.textContent = 'DE'; // Button zu "DE" wechseln
-            setLanguage('ENG'); // Seite auf Englisch setzen
-        } else {
-            languageButton.textContent = 'ENG'; // Button zu "ENG" wechseln
-            setLanguage('DE'); // Seite auf Deutsch setzen
-        }
+    languageButton.addEventListener('click', function () {
+        currentLang = (currentLang === 'ENG') ? 'DE' : 'ENG';
+        localStorage.setItem('language', currentLang);
+        setLanguage(currentLang);
+        updateButtonLabel(currentLang);
     });
 
-    // Funktion zum Setzen der Sprache auf der Seite
+    function updateButtonLabel(language) {
+        languageButton.textContent = (language === 'DE') ? 'ENG' : 'DE';
+    }
+
     function setLanguage(language) {
-        if (language === 'ENG') {
-            document.getElementById('bannerTitle').textContent = 'Ahzos';
-            document.getElementById('bannerText').textContent = 'School project with Luis Thiermann';
-            document.getElementById('sectionOneTitle').textContent = 'The Journey and the Moral Choices';
-            document.getElementById('sectionOneText').textContent = 'Embark on an epic journey through dangerous worlds that require skillful jumping and running to overcome. The game challenges your reflexes and guides you through diverse biomes filled with exciting obstacles.';
-            document.getElementById('sectionTwoText').textContent = 'As the game progresses, you will face moral decisions that challenge your perception of the world and your actions. Uncover the true nature of the game as you unravel the dark secrets of the Watzmann.';
-            document.getElementById('sectionThreeTitle').textContent = 'What Awaits You in the Game';
-            document.getElementById('sectionThreeText').textContent = 'The player will encounter various challenges that get progressively harder as they advance. Enemies and obstacles require not only quick reflexes but also careful tactics and planning.';
-            document.getElementById('gameExpectations').innerHTML = `
-                <li>Obstacles that block your movements or slow you down.</li>
-                <li>Hidden secrets and new gameplay mechanics that will surprise you.</li>
-                <li>The constant need to improve your skills and learn new techniques.</li>
-                <li>The ever-increasing pace of the game that keeps you in a constant state of challenge.</li>
-                <li>The mix of danger and discovery that intensifies the atmosphere.</li>
-            `;
-            document.getElementById('downloadLink').textContent = 'Download';
+        console.log(`Sprache gewechselt zu: ${language}`);
 
-            document.getElementById('tilesetTitle').textContent = 'Tilesets and Backgrounds';
-            document.getElementById('tilesetText').textContent = 'For the game "Ahzos", I designed tilesets and backgrounds in Aseprite. These pixel art graphics contribute to the retro-inspired atmosphere of the game and form the visual foundation of the game worlds. The tilesets include interactive elements, while the backgrounds enhance the gaming experience and support the story.';
-            document.getElementById('downloadTilesets').textContent = 'Download Tilesets';
+        const translations = {
+            DE: {
+                home: "Home",
+                projects: "Projekte",
+                learnProject: "Lernprojekt",
+                ahzos: "Ahzos",
+                shatteredReality: "The Shattered Reality",
+                astrabann: "Astrabann",
+                archive: "Archiv",
+                bannerTitle: "Ahzos",
+                bannerText: "Schulprojekt mit Luis Thiermann",
+                sectionOneTitle: "Die Reise und die moralischen Entscheidungen",
+                sectionOneText: "Erlebe eine epische Reise...",
+                sectionTwoText: "Im Laufe des Spiels wirst du...",
+                sectionThreeTitle: "Was dich im Spiel erwartet",
+                sectionThreeText: "Der Spieler trifft auf verschiedene Herausforderungen...",
+                downloadLink: "Download",
+                tilesetTitle: "Tilesets und Hintergründe",
+                tilesetText: "Für das Spiel 'Ahzos' habe ich Tilesets und Hintergründe...",
+                downloadTilesets: "Download Tilesets",
+                hangmanTitle: "Hangman",
+                hangmanText: "Dieses Minigame, Hangman, wurde als kleines Spiel entwickelt...",
+                downloadHangman: "Download Hangman"
+            },
+            ENG: {
+                home: "Home",
+                projects: "Projects",
+                learnProject: "Learning Project", // Hier wird Lernprojekt übersetzt!
+                ahzos: "Ahzos",
+                shatteredReality: "The Shattered Reality",
+                astrabann: "Astrabann",
+                archive: "Archive",
+                bannerTitle: "Ahzos",
+                bannerText: "School project with Luis Thiermann",
+                sectionOneTitle: "The Journey and the Moral Choices",
+                sectionOneText: "Embark on an epic journey...",
+                sectionTwoText: "As the game progresses, you will face moral decisions...",
+                sectionThreeTitle: "What Awaits You in the Game",
+                sectionThreeText: "The player will encounter various challenges...",
+                downloadLink: "Download",
+                tilesetTitle: "Tilesets and Backgrounds",
+                tilesetText: "For the game 'Ahzos', I designed tilesets and backgrounds...",
+                downloadTilesets: "Download Tilesets",
+                hangmanTitle: "Hangman",
+                hangmanText: "This minigame, Hangman, was developed as a small game...",
+                downloadHangman: "Download Hangman"
+            }
+        };
 
-            document.getElementById('hangmanTitle').textContent = 'Hangman';
-            document.getElementById('hangmanText').textContent = 'This minigame, Hangman, was developed as a small game to guess the name of the game Ahzos before starting the main game. Have fun guessing!';
-            document.getElementById('downloadHangman').textContent = 'Download Hangman';
-        } else {
-            document.getElementById('bannerTitle').textContent = 'Ahzos';
-            document.getElementById('bannerText').textContent = 'Schulprojekt mit Luis Thiermann';
-            document.getElementById('sectionOneTitle').textContent = 'Die Reise und die moralischen Entscheidungen';
-            document.getElementById('sectionOneText').textContent = 'Erlebe eine epische Reise durch gefährliche Welten, die durch geschicktes Springen und Laufen überwunden werden müssen. Das Spiel fordert deine Reaktionsfähigkeit heraus und führt dich durch abwechslungsreiche Biome mit spannenden Hindernissen.';
-            document.getElementById('sectionTwoText').textContent = 'Im Laufe des Spiels wirst du mit moralischen Entscheidungen konfrontiert, die deine Wahrnehmung auf die Welt und deine Handlungen in Frage stellen. Entdecke das wahre Wesen des Spiels, während du die dunklen Geheimnisse des Watzmanns entschlüsselst.';
-            document.getElementById('sectionThreeTitle').textContent = 'Was dich im Spiel erwartet';
-            document.getElementById('sectionThreeText').textContent = 'Der Spieler trifft auf verschiedene Herausforderungen, die immer schwieriger werden, während er voranschreitet. Gegner und Hindernisse verlangen nicht nur schnelle Reaktionen, sondern auch eine sorgfältige Taktik und Planung.';
-            document.getElementById('gameExpectations').innerHTML = `
-                <li>Hindernisse, die deine Bewegungen blockieren oder dich aufhalten.</li>
-                <li>Verborgene Geheimnisse und neue Spielmechaniken, die dich überraschen werden.</li>
-                <li>Die ständige Notwendigkeit, deine Fähigkeiten zu verbessern und neue Techniken zu erlernen.</li>
-                <li>Das stetig steigende Tempo des Spiels, das dich in einen Zustand ständiger Herausforderung versetzt.</li>
-                <li>Die Mischung aus Gefahr und Entdeckung, die die Atmosphäre intensiviert.</li>
-            `;
-            document.getElementById('downloadLink').textContent = 'Download';
-
-            document.getElementById('tilesetTitle').textContent = 'Tilesets und Hintergründe';
-            document.getElementById('tilesetText').textContent = 'Für das Spiel "Ahzos" habe ich Tilesets und Hintergründe in Aseprite entworfen. Diese Pixel-Art-Grafiken tragen zur retro-inspirierten Atmosphäre des Spiels bei und bilden die visuelle Grundlage für die Spielwelten. Die Tilesets beinhalten interaktive Elemente, während die Hintergründe das Spielerlebnis vertiefen und die Handlung unterstützen.';
-            document.getElementById('downloadTilesets').textContent = 'Download Tilesets';
-
-            document.getElementById('hangmanTitle').textContent = 'Hangman';
-            document.getElementById('hangmanText').textContent = 'Dieses Minigame, Hangman, wurde als kleines Spiel entwickelt, um den Namen des Spiels Ahzos zu erraten, bevor du das Hauptspiel startest. Viel Spaß beim Erraten!';
-            document.getElementById('downloadHangman').textContent = 'Download Hangman';
+        function updateText(id, text) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.textContent = text;
+            } else {
+                console.warn(`Element mit ID "${id}" nicht gefunden!`);
+            }
         }
+
+        // Navigation
+        updateText('homeLink', translations[language].home);
+        updateText('projectsLink', translations[language].projects);
+        updateText('learningProjectLink', translations[language].learnProject); // Hier wird "Lernprojekt" übersetzt!
+        updateText('ahzosLink', translations[language].ahzos);
+        updateText('shatteredRealityLink', translations[language].shatteredReality);
+        updateText('astrabannLink', translations[language].astrabann);
+        updateText('archiveLink', translations[language].archive);
+
+        // Hauptinhalt
+        updateText('bannerTitle', translations[language].bannerTitle);
+        updateText('bannerText', translations[language].bannerText);
+        updateText('sectionOneTitle', translations[language].sectionOneTitle);
+        updateText('sectionOneText', translations[language].sectionOneText);
+        updateText('sectionTwoText', translations[language].sectionTwoText);
+        updateText('sectionThreeTitle', translations[language].sectionThreeTitle);
+        updateText('sectionThreeText', translations[language].sectionThreeText);
+        updateText('downloadLink', translations[language].downloadLink);
+        updateText('tilesetTitle', translations[language].tilesetTitle);
+        updateText('tilesetText', translations[language].tilesetText);
+        updateText('downloadTilesets', translations[language].downloadTilesets);
+        updateText('hangmanTitle', translations[language].hangmanTitle);
+        updateText('hangmanText', translations[language].hangmanText);
+        updateText('downloadHangman', translations[language].downloadHangman);
     }
 });
 
+// Shattered Reality
+document.addEventListener("DOMContentLoaded", function () {
+    const languageButton = document.getElementById("language-toggle");
 
-// language-toggle.js für The Shattered Reality
-document.addEventListener('DOMContentLoaded', function() {
-    const languageButton = document.getElementById('language-toggle');
-    
-    // Standardmäßig auf Deutsch setzen
-    setLanguage('DE');
-    languageButton.textContent = 'ENG'; // Button soll "ENG" für Englisch zeigen
+    // Standardmäßig auf Deutsch setzen, falls keine Sprache gespeichert ist
+    let currentLanguage = localStorage.getItem("language");
 
-    languageButton.addEventListener('click', function() {
-        const currentLang = languageButton.textContent;
+    if (!currentLanguage) {
+        currentLanguage = "DE"; // **Standard auf Deutsch setzen**
+        localStorage.setItem("language", currentLanguage); // **Speicherung der Standard-Sprache**
+    }
 
-        if (currentLang === 'ENG') {
-            languageButton.textContent = 'DE';
-            setLanguage('ENG');
-        } else {
-            languageButton.textContent = 'ENG';
-            setLanguage('DE');
-        }
+    // Sprache setzen
+    setLanguage(currentLanguage);
+    updateButtonText(currentLanguage);
+
+    languageButton.addEventListener("click", function () {
+        // Sprache umschalten
+        currentLanguage = (currentLanguage === "DE") ? "ENG" : "DE";
+
+        // Neue Sprache speichern und anwenden
+        localStorage.setItem("language", currentLanguage);
+        setLanguage(currentLanguage);
+        updateButtonText(currentLanguage);
     });
 
     function setLanguage(language) {
-        if (language === 'ENG') {
-            document.getElementById('pageTitle').textContent = 'The Shattered Reality';
-            document.getElementById('pageDescription').textContent = 'School Project';
-            document.getElementById('gameTitle').textContent = 'Experience the world of "The Shattered Reality"';
-            document.getElementById('gameDescription').textContent = 'In "The Shattered Reality," embark on an exciting journey in a post-apocalyptic world overrun by mutants. Together with your teammates, you must complete a mystical wall to save reality from collapsing. The fate of the world rests in your hands as you collect artifacts guarded by dangerous bosses.';
-            document.getElementById('additionalGameDescription').textContent = 'Each player takes on the role of a mutated survivor with unique abilities. You must fight through dangerous areas, survive boss fights, and collect resources to obtain the final artifact and complete the mystical wall. Cooperative teamwork and strategic decisions are key to success. Defeat the threats in your path and uncover the true extent of the decay that threatens the world.';
+        console.log(`Sprache gewechselt zu: ${language}`); // Debugging: Prüfen, ob die Sprache korrekt wechselt
 
-            document.getElementById('specialFeaturesTitle').textContent = 'Special Features of "The Shattered Reality"';
-            document.getElementById('specialFeaturesText').innerHTML = `
-                <p>Cooperative gameplay where collaboration is key.</p>
-                <p>Unique class-based abilities for each player.</p>
-                <p>Core mechanics involving mini-bosses and resource management.</p>
-                <p>The ultimate goal is to acquire the final artifact and complete the wall.</p>
-                <p>Intense boss fights and increasingly difficult challenges.</p>
-            `;
-            document.getElementById('downloadButton').textContent = 'Download';
-        } else {
-            document.getElementById('pageTitle').textContent = 'Die zersplitterte Realität';
-            document.getElementById('pageDescription').textContent = 'Schulprojekt';
-            document.getElementById('gameTitle').textContent = 'Erlebe die Welt von "The Shattered Reality"';
-            document.getElementById('gameDescription').textContent = 'In "The Shattered Reality" begibst du dich auf eine aufregende Reise in einer post-apokalyptischen Welt, die von Mutanten überrannt wird. Gemeinsam mit deinen Mitspielern musst du eine mystische Wand vervollständigen, um die Realität vor dem Zerfall zu bewahren. Durch das Sammeln von Artefakten, die von gefährlichen Bossen bewacht werden, steht das Schicksal der Welt auf dem Spiel. Dein Team muss zusammenarbeiten, um diese Herausforderung zu meistern und die letzte Hoffnung der Menschheit zu retten.';
-            document.getElementById('additionalGameDescription').textContent = 'Jeder Spieler übernimmt die Rolle eines mutierten Überlebenden mit einzigartigen Fähigkeiten. Du musst dich durch gefährliche Gebiete kämpfen, Bosskämpfe überstehen und Ressourcen sammeln, um das letzte Artefakt zu erlangen und die mystische Wand zu vervollständigen. Die kooperative Zusammenarbeit und strategische Entscheidungen sind der Schlüssel zum Erfolg. Schlage die Bedrohungen, die auf deinem Weg liegen, und entdecke das wahre Ausmaß des Verfalls, der die Welt bedroht.';
+        const translations = {
+            DE: {
+                home: "Home",
+                projects: "Projekte",
+                learnProject: "Lernprojekt",
+                ahzos: "Ahzos",
+                shatteredReality: "The Shattered Reality",
+                astrabann: "Astrabann",
+                archive: "Archiv",
+                pageTitle: "The Shattered Reality",
+                pageDescription: "Schulprojekt",
+                gameTitle: 'Erlebe die Welt von "The Shattered Reality"',
+                gameDescription: 'In "The Shattered Reality" begibst du dich auf eine aufregende Reise in einer post-apokalyptischen Welt...',
+                additionalGameDescription: 'Jeder Spieler übernimmt die Rolle eines mutierten Überlebenden mit einzigartigen Fähigkeiten...',
+                specialFeaturesTitle: 'Besondere Merkmale von "The Shattered Reality"',
+                specialFeaturesText: `
+                    <p>Kooperatives Gameplay, bei dem Zusammenarbeit entscheidend ist.</p>
+                    <p>Einzigartige klassenbasierte Fähigkeiten für jeden Spieler.</p>
+                    <p>Schlüsselmechanik mit Mini-Bossen und Ressourcenmanagement.</p>
+                    <p>Das ultimative Ziel ist es, das letzte Artefakt zu erlangen und die Wand zu vervollständigen.</p>
+                    <p>Intensive Bosskämpfe und immer größer werdende Herausforderungen.</p>
+                `,
+                downloadButton: "Download"
+            },
+            ENG: {
+                home: "Home",
+                projects: "Projects",
+                learnProject: "Learning Project",
+                ahzos: "Ahzos",
+                shatteredReality: "The Shattered Reality",
+                astrabann: "Astrabann",
+                archive: "Archive",
+                pageTitle: "The Shattered Reality",
+                pageDescription: "School Project",
+                gameTitle: 'Experience the world of "The Shattered Reality"',
+                gameDescription: 'In "The Shattered Reality," embark on an exciting journey in a post-apocalyptic world overrun by mutants...',
+                additionalGameDescription: 'Each player takes on the role of a mutated survivor with unique abilities...',
+                specialFeaturesTitle: 'Special Features of "The Shattered Reality"',
+                specialFeaturesText: `
+                    <p>Cooperative gameplay where collaboration is key.</p>
+                    <p>Unique class-based abilities for each player.</p>
+                    <p>Core mechanics involving mini-bosses and resource management.</p>
+                    <p>The ultimate goal is to acquire the final artifact and complete the wall.</p>
+                    <p>Intense boss fights and increasingly difficult challenges.</p>
+                `,
+                downloadButton: "Download"
+            }
+        };
 
-            document.getElementById('specialFeaturesTitle').textContent = 'Besondere Merkmale von "The Shattered Reality"';
-            document.getElementById('specialFeaturesText').innerHTML = `
-                <p>Kooperatives Gameplay, bei dem Zusammenarbeit entscheidend ist.</p>
-                <p>Einzigartige klassenbasierte Fähigkeiten für jeden Spieler.</p>
-                <p>Schlüsselmechanik mit Mini-Bossen und Ressourcenmanagement.</p>
-                <p>Das ultimative Ziel ist es, das letzte Artefakt zu erlangen und die Wand zu vervollständigen.</p>
-                <p>Intensive Bosskämpfe und immer größer werdende Herausforderungen.</p>
-            `;
-            document.getElementById('downloadButton').textContent = 'Download';
+        function updateText(id, text) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.innerHTML = text;
+            } else {
+                console.warn(`Element mit ID "${id}" nicht gefunden!`);
+            }
         }
+
+        // Navigation (auch "Lernprojekt" wird jetzt übersetzt!)
+        updateText("homeLink", translations[language].home);
+        updateText("projectsLink", translations[language].projects);
+        updateText("learningProjectLink", translations[language].learnProject);
+        updateText("ahzosLink", translations[language].ahzos);
+        updateText("shatteredRealityLink", translations[language].shatteredReality);
+        updateText("astrabannLink", translations[language].astrabann);
+        updateText("archiveLink", translations[language].archive);
+
+        // Hauptinhalt
+        updateText("pageTitle", translations[language].pageTitle);
+        updateText("pageDescription", translations[language].pageDescription);
+        updateText("gameTitle", translations[language].gameTitle);
+        updateText("gameDescription", translations[language].gameDescription);
+        updateText("additionalGameDescription", translations[language].additionalGameDescription);
+        updateText("specialFeaturesTitle", translations[language].specialFeaturesTitle);
+        updateText("specialFeaturesText", translations[language].specialFeaturesText);
+        updateText("downloadButton", translations[language].downloadButton);
+    }
+
+    function updateButtonText(language) {
+        languageButton.textContent = (language === "DE") ? "ENG" : "DE";
     }
 });
-
 
 // index.html
 
@@ -139,100 +226,183 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageToggle = document.getElementById("language-toggle");
 
     languageToggle.addEventListener("click", function (event) {
-        event.preventDefault(); // Verhindert das standardmäßige Verhalten (Navigation)
+        event.preventDefault();
 
-        // Sprachumschaltung: Wenn die aktuelle Sprache Deutsch ist, wechsle zu Englisch und umgekehrt.
         if (languageToggle.innerText === "ENG") {
-            languageToggle.innerText = "DE"; // Setzt den Text des Buttons auf "DE"
-            changeLanguage("en"); // Wechselt die Sprache zu Englisch
+            languageToggle.innerText = "DE";
+            changeLanguage("en");
         } else {
-            languageToggle.innerText = "ENG"; // Setzt den Text des Buttons auf "ENG"
-            changeLanguage("de"); // Wechselt die Sprache zu Deutsch
+            languageToggle.innerText = "ENG";
+            changeLanguage("de");
         }
     });
 
     function changeLanguage(language) {
-        if (language === "en") {
-            // Header
-            document.getElementById("bannerHeader").innerText = "Hello, I'm Shania";
-            document.getElementById("bannerDescription").innerText = "Creative chaos with system. Code. Design.";
+        const translations = {
+            "de": {
+                "bannerHeader": "Hallihallo, ich bin Shania",
+                "bannerDescription": "Kreatives Chaos mit System.<br/>Code. Design.",
+                "navProjects": "Projekte",  // Schon richtig ✅
+                "navArchive": "Archiv",  // Schon richtig ✅
+                "oneHeader": "Ich.",
+                "oneDescription": "Debugging my life since 2004.",
+                "oneCreative": "Kreativität in jeder Form.</br>Ich liebe es, zu lesen, zu malen, digital zu zeichnen, Musik zu machen (Gitarre & Piano) und zu häkeln.</br>. . .",
+                "oneGaming": "Gaming-Obsession.</br>Meine Lieblingsspiele aller Zeiten: The Legend of Zelda, Age of Empires, Celeste<br/>. . .",
+                "twoHeader": "Katze.",
+                "twoDescription": "Ponyo & Bibbles.",
+                "threeHeader": "Gedächtnisanker.",
+                "threeDescription": "Schaffen. Scheitern. Weitermachen.",
+                "threeQuote": "Es ist niemals zu spät, etwas Neues zu lernen. Niemals zu spät, einen Traum weiterzuverfolgen. Niemals zu spät, besser zu werden – in dem, was du liebst. Man wächst, man fällt, man zweifelt. Doch wer stehen bleibt, sieht nie, wie weit er gehen kann. Manchmal braucht es nur einen Funken, einen Moment – und alles verändert sich. Die ersten Zeilen Code, der erste Pinselstrich, der erste Akkord. Perfekt war es nie. Doch Fortschritt ist das Ziel. Bleib dran. Halte fest. Erschaffe. Denn die besten Geschichten schreibt nicht Talent, sondern Beharrlichkeit. Es ist niemals zu spät. Niemals.",
+                "fourHeader": "Tätigkeit.",
+                "fourDescription": "Meine Skills an der SRH in Heidelberg perfektionieren und meine Stats in Game Dev & Multimedia maxen.",
+                "contactHeader": "Na, Interesse geweckt?",
+                "contactText": "Kontaktier mich – Bugs fixe ich, Mails lese ich.",
+                "emailPlaceholder": "Deine E-Mail-Adresse",
+                "messagePlaceholder": "Deine Nachricht",
+                "subjectPlaceholder": "Betreff",
+                "sendButton": "Senden",
+                "footerTwitter": "Twitter",
+                "footerLinkedIn": "LinkedIn",
+                "footerInstagram": "Instagram",
+                "footerGitHub": "GitHub",
+                "footerEmail": "E-Mail"
+            },
+            "en": {
+                "bannerHeader": "Hello, I'm Shania",
+                "bannerDescription": "Creative chaos with system.<br/>Code. Design.",
+                "navProjects": "Projects",  // Hinzugefügt ✅
+                "navArchive": "Archive",  // Hinzugefügt ✅
+                "oneHeader": "Me.",
+                "oneDescription": "Debugging my life since 2004.",
+                "oneCreative": "Creativity in all forms.</br>I love reading, painting, digital drawing, making music (guitar & piano), and crocheting.</br>. . .",
+                "oneGaming": "Gaming Obsession.</br>My all-time favorite games: The Legend of Zelda, Age of Empires, Celeste.<br/>. . .",
+                "twoHeader": "Cats.",
+                "twoDescription": "Ponyo & Bibbles.",
+                "threeHeader": "Memory Anchors.",
+                "threeDescription": "Create. Fail. Keep going.",
+                "threeQuote": "It’s never too late to learn something new, never too late to pursue a dream, never too late to become better at what you love. You grow, you fall, you doubt. But if you remain standing still, you'll never discover how far you can go. Sometimes all it takes is a single spark, one moment—and everything changes. The first lines of code, the first brushstroke, the first chord—it was never perfect, but progress is the goal. Keep going, hold on, create. Because the greatest stories aren't written by talent alone, but by perseverance. It's never too late. Never.",
+                "fourHeader": "Activity.",
+                "fourDescription": "Perfecting my skills at SRH in Heidelberg and maxing my stats in Game Dev & Multimedia.",
+                "contactHeader": "Interested?",
+                "contactText": "Contact me – I fix bugs, I read emails.",
+                "emailPlaceholder": "Your Email Address",
+                "messagePlaceholder": "Your Message",
+                "subjectPlaceholder": "Subject",
+                "sendButton": "Send",
+                "footerTwitter": "Twitter",
+                "footerLinkedIn": "LinkedIn",
+                "footerInstagram": "Instagram",
+                "footerGitHub": "GitHub",
+                "footerEmail": "Email"
+            }
+        };
 
-            // Section One
-            document.getElementById("oneHeader").innerText = "Me.";
-            document.getElementById("oneDescription").innerText = "Debugging my life since 2004.";
-            document.getElementById("oneGaming").innerText = "Gaming Obsession.";
-            document.getElementById("oneFavoriteGames").innerText = "My all-time favorite games: The Legend of Zelda, Age of Empires, Celeste.";
+        const selectedLanguage = translations[language];
 
-            // Section Two
-            document.getElementById("twoHeader").innerText = "Cat.";
-            document.getElementById("twoDescription").innerText = "Ponyo & Bibbles.";
+        // Setze alle Texte mit IDs
+        Object.keys(selectedLanguage).forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.innerHTML = selectedLanguage[id]; // innerText → innerHTML
+            }
+        });
 
-            // Section Three
-            document.getElementById("threeHeader").innerText = "Memory Anchors.";
-            document.getElementById("threeDescription").innerText = "Create. Fail. Keep going.";
-            document.getElementById("threeQuote").innerText = "It’s never too late to learn something new. Never too late to pursue a dream. Never too late to get better at what you love. Sometimes, all it takes is a spark, a moment – and everything changes.";
+        // Setze spezielle Placeholder- und Button-Werte für Formulare
+        document.querySelector("input[type='email']").setAttribute("placeholder", selectedLanguage.emailPlaceholder);
+        document.querySelector("textarea").setAttribute("placeholder", selectedLanguage.messagePlaceholder);
+        document.querySelector("input[name='subject']").setAttribute("placeholder", selectedLanguage.subjectPlaceholder);
+        document.querySelector("input[type='submit']").setAttribute("value", selectedLanguage.sendButton);
 
-            // Section Four
-            document.getElementById("fourHeader").innerText = "Activity.";
-            document.getElementById("fourDescription").innerText = "Perfecting my skills at SRH in Heidelberg and maxing my stats in Game Dev & Multimedia.";
+        // Setze Footer-Links
+        document.querySelector("footer ul li:nth-child(1) a span").innerText = selectedLanguage.footerTwitter;
+        document.querySelector("footer ul li:nth-child(2) a span").innerText = selectedLanguage.footerLinkedIn;
+        document.querySelector("footer ul li:nth-child(3) a span").innerText = selectedLanguage.footerInstagram;
+        document.querySelector("footer ul li:nth-child(4) a span").innerText = selectedLanguage.footerGitHub;
+        document.querySelector("footer ul li:nth-child(5) a span").innerText = selectedLanguage.footerEmail;
+    }
+});
 
-            // Section Five (Form Section)
-            document.querySelector('header h2').innerText = "Interested?";
-            document.querySelector('header p').innerText = "Contact me – I fix bugs, I read emails";
-            document.querySelector('input[type="email"]').setAttribute('placeholder', "Your Email Address");
-            document.querySelector('input[type="submit"]').setAttribute('value', "Send");
-            document.querySelector('textarea').setAttribute('placeholder', "Your Message");
-            document.querySelector('input[name="subject"]').setAttribute('placeholder', "Subject");
+// Archiv
 
-            // Footer
-            document.querySelector("footer ul li:nth-child(1) a span").innerText = "Twitter";
-            document.querySelector("footer ul li:nth-child(2) a span").innerText = "LinkedIn";
-            document.querySelector("footer ul li:nth-child(3) a span").innerText = "Instagram";
-            document.querySelector("footer ul li:nth-child(4) a span").innerText = "GitHub";
-            document.querySelector("footer ul li:nth-child(5) a span").innerText = "Email";
-            document.querySelector("footer .copyright li:nth-child(1)").innerText = "&copy; Shania Priscilla Kim Sulit.";
-            document.querySelector("footer .copyright li:nth-child(2)").innerText = "HTML5 UP";
+document.addEventListener('DOMContentLoaded', function () {
+    const languageButton = document.getElementById('language-toggle'); // ENG/DE Button
+    if (!languageButton) {
+        console.error("Sprachumschalter nicht gefunden!");
+        return;
+    }
 
-        } else if (language === "de") {
-            // Header
-            document.getElementById("bannerHeader").innerText = "Hallihallo, ich bin Shania";
-            document.getElementById("bannerDescription").innerText = "Kreatives Chaos mit System. Code. Design.";
+    let currentLang = localStorage.getItem('language') || 'DE';
 
-            // Section One
-            document.getElementById("oneHeader").innerText = "Ich.";
-            document.getElementById("oneDescription").innerText = "Debugging my life since 2004.";
-            document.getElementById("oneGaming").innerText = "Gaming-Obsession.";
-            document.getElementById("oneFavoriteGames").innerText = "Meine Lieblingsspiele aller Zeiten: The Legend of Zelda, Age of Empires, Celeste.";
+    setLanguage(currentLang);
+    updateButtonLabel(currentLang);
 
-            // Section Two
-            document.getElementById("twoHeader").innerText = "Katze.";
-            document.getElementById("twoDescription").innerText = "Ponyo & Bibbles.";
+    // Event-Listener für Button-Klick
+    languageButton.addEventListener('click', function () {
+        currentLang = (currentLang === 'ENG') ? 'DE' : 'ENG';
+        localStorage.setItem('language', currentLang);
+        setLanguage(currentLang);
+        updateButtonLabel(currentLang);
+    });
 
-            // Section Three
-            document.getElementById("threeHeader").innerText = "Gedächtnisanker.";
-            document.getElementById("threeDescription").innerText = "Schaffen. Scheitern. Weitermachen.";
-            document.getElementById("threeQuote").innerText = "Es ist niemals zu spät, etwas Neues zu lernen. Niemals zu spät, einen Traum weiterzuverfolgen. Niemals zu spät, besser zu werden – in dem, was du liebst. Manchmal braucht es nur einen Funken, einen Moment – und alles verändert sich.";
+    function updateButtonLabel(language) {
+        languageButton.textContent = (language === 'DE') ? 'ENG' : 'DE';
+    }
 
-            // Section Four
-            document.getElementById("fourHeader").innerText = "Tätigkeit.";
-            document.getElementById("fourDescription").innerText = "Meine Skills an der SRH in Heidelberg perfektionieren und meine Stats in Game Dev & Multimedia maxen.";
+    function setLanguage(language) {
+        console.log(`Sprache gewechselt zu: ${language}`);
 
-            // Section Five (Form Section)
-            document.querySelector('header h2').innerText = "Na, Interesse geweckt?";
-            document.querySelector('header p').innerText = "Kontaktier mich – Bugs fixe ich, Mails lese ich";
-            document.querySelector('input[type="email"]').setAttribute('placeholder', "Deine E-Mail-Adresse");
-            document.querySelector('input[type="submit"]').setAttribute('value', "Senden");
-            document.querySelector('textarea').setAttribute('placeholder', "Deine Nachricht");
-            document.querySelector('input[name="subject"]').setAttribute('placeholder', "Betreff");
+        const translations = {
+            DE: {
+                home: "Home",
+                projects: "Projekte",
+                learnProject: "Lernprojekt",
+                ahzos: "Ahzos",
+                shatteredReality: "The Shattered Reality",
+                astrabann: "Astrabann",
+                archive: "Archiv",
+                archiveHeading: "Archiv",
+                gallery: "Bildergalerie",
+                galleryHome: "Home",
+                projectSection: "Projekte",
+                projectSub: "1-3",
+                cats: "Katzen",
+                catNames: "Ponyo & Bibbles",
+                footer: "© Shania Priscilla Kim Sulit."
+            },
+            ENG: {
+                home: "Home",
+                projects: "Projects",
+                learnProject: "Learning Project",
+                ahzos: "Ahzos",
+                shatteredReality: "The Shattered Reality",
+                astrabann: "Astrabann",
+                archive: "Archive",
+                archiveHeading: "Archive",
+                gallery: "Image Gallery",
+                galleryHome: "Home",
+                projectSection: "Projects",
+                projectSub: "1-3",
+                cats: "Cats",
+                catNames: "Ponyo & Bibbles",
+                footer: "© Shania Priscilla Kim Sulit."
+            }
+        };
 
-            // Footer
-            document.querySelector("footer ul li:nth-child(1) a span").innerText = "Twitter";
-            document.querySelector("footer ul li:nth-child(2) a span").innerText = "LinkedIn";
-            document.querySelector("footer ul li:nth-child(3) a span").innerText = "Instagram";
-            document.querySelector("footer ul li:nth-child(4) a span").innerText = "GitHub";
-            document.querySelector("footer ul li:nth-child(5) a span").innerText = "E-Mail";
-            document.querySelector("footer .copyright li:nth-child(1)").innerText = "&copy; Shania Priscilla Kim Sulit.";
-            document.querySelector("footer .copyright li:nth-child(2)").innerText = "HTML5 UP";
-        }
+        // Elemente selektieren und Text setzen
+        document.getElementById('homeLink').textContent = translations[language].home;
+        document.getElementById('projectsLink').textContent = translations[language].projects;
+        document.getElementById('learnProjectLink').textContent = translations[language].learnProject;
+        document.getElementById('ahzosLink').textContent = translations[language].ahzos;
+        document.getElementById('shatteredRealityLink').textContent = translations[language].shatteredReality;
+        document.getElementById('astrabannLink').textContent = translations[language].astrabann;
+        document.getElementById('archiveLink').textContent = translations[language].archive;
+        document.querySelector('h2').textContent = translations[language].archiveHeading;
+        document.querySelector('h3:nth-of-type(1)').textContent = translations[language].gallery;
+        document.querySelector('h4:nth-of-type(1)').textContent = translations[language].galleryHome;
+        document.querySelector('h3:nth-of-type(2)').textContent = translations[language].projectSection;
+        document.querySelector('h4:nth-of-type(2)').textContent = translations[language].projectSub;
+        document.querySelector('h3:nth-of-type(3)').textContent = translations[language].cats;
+        document.querySelector('h4:nth-of-type(3)').textContent = translations[language].catNames;
+        document.querySelector('footer ul.copyright li:first-child').textContent = translations[language].footer;
     }
 });
