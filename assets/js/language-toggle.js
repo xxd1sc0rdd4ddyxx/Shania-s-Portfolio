@@ -396,13 +396,93 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('shatteredRealityLink').textContent = translations[language].shatteredReality;
         document.getElementById('astrabannLink').textContent = translations[language].astrabann;
         document.getElementById('archiveLink').textContent = translations[language].archive;
-        document.querySelector('h2').textContent = translations[language].archiveHeading;
-        document.querySelector('h3:nth-of-type(1)').textContent = translations[language].gallery;
-        document.querySelector('h4:nth-of-type(1)').textContent = translations[language].galleryHome;
-        document.querySelector('h3:nth-of-type(2)').textContent = translations[language].projectSection;
-        document.querySelector('h4:nth-of-type(2)').textContent = translations[language].projectSub;
-        document.querySelector('h3:nth-of-type(3)').textContent = translations[language].cats;
-        document.querySelector('h4:nth-of-type(3)').textContent = translations[language].catNames;
+        const h3Elements = document.querySelectorAll('h3');
+        const h4Elements = document.querySelectorAll('h4');
+        
+        if (h3Elements.length >= 3) {
+            h3Elements[0].textContent = translations[language].gallery;
+            h3Elements[1].textContent = translations[language].projectSection;
+            h3Elements[2].textContent = translations[language].cats;
+        }
+        
+        if (h4Elements.length >= 3) {
+            h4Elements[0].textContent = translations[language].galleryHome;
+            h4Elements[1].textContent = translations[language].projectSub;
+            h4Elements[2].textContent = translations[language].catNames;
+        }
+        
+        
         document.querySelector('footer ul.copyright li:first-child').textContent = translations[language].footer;
     }
 });
+
+//Astrabann 
+document.addEventListener("DOMContentLoaded", function () {
+    const languageButton = document.getElementById("language-toggle");
+
+    // Standardmäßig auf Deutsch setzen, falls keine Sprache gespeichert ist
+    let currentLang = localStorage.getItem("language") || "ENG";
+    setLanguage(currentLang);
+    updateButtonLabel(currentLang);
+
+    languageButton.addEventListener("click", function () {
+        // Sprache umschalten
+        currentLang = (currentLang === "ENG") ? "DE" : "ENG";
+
+        // Neue Sprache speichern und anwenden
+        localStorage.setItem("language", currentLang);
+        setLanguage(currentLang);
+        updateButtonLabel(currentLang);
+    });
+
+    function updateButtonLabel(language) {
+        // Setzt den Button-Text auf die andere Sprache
+        languageButton.textContent = (language === "ENG") ? "DE" : "ENG";
+    }
+});
+
+function setLanguage(language) {
+    const translations = {
+        DE: {
+            gddTitle: "Game Design Dokument",
+            gddText: "Das Game Design Document definiert die Kernmechaniken, Story und Rätsel von AstraBann. Ziel ist eine immersive Spielerfahrung, die historisches Wissen mit herausforderndem Gameplay verbindet.",
+            gameplayTemplateTitle: "Gameplay-Vorlage (Testlevel)",
+            gameplayTemplateText: "Diese frühe Gameplay-Vorlage dient als Testumgebung für die grundlegenden Rätselmechaniken...",
+            gameplayTitle: "Ein magisches Rätsel-Abenteuer im Heidelberger Schloss",
+            gameplayText: "AstraBann ist ein storybasiertes Rätsel-Plattformspiel, das Spieler auf eine magische Reise...",
+            gameplayFeaturesTitle: "Gameplay",
+            feature1: "Rätsel & Erkundung – Historisch inspirierte Puzzle im Heidelberger Schloss lösen.",
+            feature2: "Plattforming-Elemente – Springen, klettern und Hindernisse überwinden.",
+            feature3: "Magische Story – Spieler schlüpfen in die Rolle eines Zauberers mit einer geheimnisvollen Mission.",
+            feature4: "Sammelobjekte – Versteckte Artefakte enthüllen spannende Hintergrundgeschichten.",
+            feature5: "Immersive Atmosphäre – Originalgetreue 3D-Umgebung mit mystischer Stimmung."
+        },
+        ENG: {
+            gddTitle: "Game Design Document",
+            gddText: "The Game Design Document defines AstraBann's core mechanics, story, and puzzles. The goal is an immersive experience that combines historical knowledge with challenging gameplay.",
+            gameplayTemplateTitle: "Gameplay Template (Test Level)",
+            gameplayTemplateText: "This early gameplay template serves as a test environment for core puzzle mechanics...",
+            gameplayTitle: "A Magical Puzzle Adventure in Heidelberg Castle",
+            gameplayText: "AstraBann is a story-driven puzzle platformer that takes players on a magical journey...",
+            gameplayFeaturesTitle: "Gameplay",
+            feature1: "Puzzles & Exploration – Solve historically inspired puzzles in Heidelberg Castle.",
+            feature2: "Platforming Elements – Jump, climb, and overcome obstacles.",
+            feature3: "Magical Story – Players take on the role of a wizard on a mysterious mission.",
+            feature4: "Collectibles – Hidden artifacts reveal exciting background stories.",
+            feature5: "Immersive Atmosphere – Authentic 3D environment with a mystical setting."
+        }
+    };
+
+
+    function updateText(id, text) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.textContent = text;
+        }
+    }
+
+    // Setze die Texte basierend auf der ausgewählten Sprache
+    Object.keys(translations[language]).forEach(id => {
+        updateText(id, translations[language][id]);
+    });
+}
