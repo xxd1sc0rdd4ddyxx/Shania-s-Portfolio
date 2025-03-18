@@ -153,11 +153,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 additionalGameDescription: 'Jeder Spieler übernimmt die Rolle eines mutierten Überlebenden mit einzigartigen Fähigkeiten die auf ihre Klasse abgestimmt sind und strategisch eingesetzt werden müssen, um Kämpfe zu bestehen, Rätsel zu lösen und Ressourcen effizient zu verwalten.',
                 specialFeaturesTitle: 'Besondere Merkmale von "The Shattered Reality"',
                 specialFeaturesText: `
-                    <p>Kooperatives Gameplay, bei dem Zusammenarbeit entscheidend ist.</p>
-                    <p>Einzigartige klassenbasierte Fähigkeiten für jeden Spieler.</p>
-                    <p>Schlüsselmechanik mit Mini-Bossen und Ressourcenmanagement.</p>
-                    <p>Das ultimative Ziel ist es, das letzte Artefakt zu erlangen und die Wand zu vervollständigen.</p>
-                    <p>Intensive Bosskämpfe und immer größer werdende Herausforderungen.</p>
+                    <li>Kooperatives Gameplay, bei dem Zusammenarbeit entscheidend ist.</li>
+                    <li>Einzigartige klassenbasierte Fähigkeiten für jeden Spieler.</li>
+                    <li>Schlüsselmechanik mit Mini-Bossen und Ressourcenmanagement.</li>
+                    <li>Das ultimative Ziel ist es, das letzte Artefakt zu erlangen und die Wand zu vervollständigen.</li>
+                    <li>Intensive Bosskämpfe und immer größer werdende Herausforderungen.</li>
                 `,
                 downloadButton: "Download GDD"
             },
@@ -176,11 +176,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 additionalGameDescription: 'Each player takes on the role of a mutated survivor with unique abilities tailored to their class, which must be used strategically to survive battles, solve puzzles, and manage resources efficiently.',
                 specialFeaturesTitle: 'Special Features of "The Shattered Reality"',
                 specialFeaturesText: `
-                    <p>Cooperative gameplay where collaboration is key.</p>
-                    <p>Unique class-based abilities for each player.</p>
-                    <p>Core mechanics involving mini-bosses and resource management.</p>
-                    <p>The ultimate goal is to acquire the final artifact and complete the wall.</p>
-                    <p>Intense boss fights and increasingly difficult challenges.</p>
+                    <li>Cooperative gameplay where collaboration is key.</li>
+                    <li>Unique class-based abilities for each player.</li>
+                    <li>Core mechanics involving mini-bosses and resource management.</li>
+                    <li>The ultimate goal is to acquire the final artifact and complete the wall.</li>
+                    <li>Intense boss fights and increasingly difficult challenges.</li>
                 `,
                 downloadButton: "Download GDD"
             }
@@ -441,6 +441,8 @@ function setLanguage(language) {
             gameplayTitle: "Ein magisches Rätsel-Abenteuer im Heidelberger Schloss",
             gameplayText: "AstraBann ist ein storybasiertes Rätsel-Plattformspiel, das Spieler auf eine magische Reise durch das Heidelberger Schloss führt. Mit kniffligen Rätseln, historischen Elementen und Sammelobjekten verbindet das Spiel Bildung und Unterhaltung. Die Spieler erkunden eine realistisch nachgebildete Umgebung, lösen geschichtsträchtige Aufgaben und entdecken versteckte Artefakte. Die immersive Story und interaktive Mechaniken fördern Neugier und langfristiges Engagement.",
             gameplayFeaturesTitle: "Gameplay",
+            loreTitle: "Lore",
+            loreText: "Im Jahr 1814 gelang es Charles de Graimberg und seinen Mitstreitern, einen unruhestiftenden Aethergeist mithilfe einer speziellen Kupferplattentechnik in der Heidelberger Schlossruine zu bannen. Seitdem wird das Siegel von Generation zu Generation bewacht. 2024 wird die junge Magierin Emilie Bonnet-Schönhausen von der Stadt Heidelberg beauftragt, die Ruine zu untersuchen, ohne zu wissen, dass sie eine direkte Verbindung zu den Ereignissen der Vergangenheit hat. Der Bann schwächt sich, und der Geist beginnt, Rätsel zu hinterlassen, um seine Befreiung zu erzwingen. Der Spieler übernimmt die Rolle von Emilie, entschlüsselt die Geheimnisse der Ruine und stellt sich dem Geist in einem finalen Duell, einem magischen Rätselspiel, das über das Schicksal der Schlossruine entscheidet.",
             feature1: "Rätsel & Erkundung – Historisch inspirierte Puzzle im Heidelberger Schloss lösen.",
             feature2: "Plattforming-Elemente – Springen, klettern und Hindernisse überwinden.",
             feature3: "Magische Story – Spieler schlüpfen in die Rolle eines Zauberers mit einer geheimnisvollen Mission.",
@@ -455,6 +457,8 @@ function setLanguage(language) {
             gameplayTitle: "A Magical Puzzle Adventure in Heidelberg Castle",
             gameplayText: "AstraBann is a story-driven puzzle-platformer that takes players on a magical journey through Heidelberg Castle. Featuring challenging puzzles, historical elements, and collectibles, the game combines education and entertainment. Players explore a realistically recreated environment, solve history-driven quests, and discover hidden artifacts. The immersive story and interactive mechanics encourage curiosity and long-term engagement.",
             gameplayFeaturesTitle: "Gameplay",
+            loreTitle: "Lore",
+            loreText: "In 1814, Charles de Graimberg and his comrades succeeded in banishing a troublemaking aetheric spirit in the Heidelberg castle ruins using a special copperplate technique. Since then, the seal has been guarded from generation to generation. In 2024, the young magician Emilie Bonnet-Schönhausen is commissioned by the city of Heidelberg to investigate the ruins, unaware of their direct connection to past events. The spell weakens, and the spirit begins to leave behind riddles in an attempt to force its release. The player assumes the role of Emilie, unlocks the secrets of the ruins, and faces the spirit in a final duel, a magical puzzle game that will decide the fate of the castle ruins.",
             feature1: "Puzzles & Exploration – Solve historically inspired puzzles in Heidelberg Castle.",
             feature2: "Platforming Elements – Jump, climb, and overcome obstacles.",
             feature3: "Magical Story – Players take on the role of a wizard on a mysterious mission.",

@@ -4053,7 +4053,21 @@ input, select, textarea {
 			}
 
 	}
-
+/* language toggle */
+@media screen and (max-width: 600px) {
+    #language-toggle {
+        font-size: 12px;
+        padding: 6px 10px;
+        min-width: 45px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+#language-toggle {
+    position: relative;
+    z-index: 1000;
+}
 /* XSmall */
 
 	@media screen and (max-width: 480px) {

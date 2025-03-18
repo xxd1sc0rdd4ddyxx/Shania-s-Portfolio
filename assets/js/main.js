@@ -49,7 +49,7 @@
 					});
 				});
 			});
-			
+
 	// Scrolly links.
 		$('.scrolly').scrolly({
 			speed: 2000
@@ -64,13 +64,15 @@
 	// Nav.
 
 		// Title Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
-				'</div>'
-			)
-				.appendTo($body);
+		var logoText = $('#logo').length ? $('#logo').html().trim() : ""; // Verhindert undefined
+		$(
+			'<div id="titleBar">' +
+				'<a href="#navPanel" class="toggle"></a>' +
+				'<span class="title">' + (logoText ? logoText : "") + '</span>' +
+			'</div>'
+		)
+		.appendTo($body);
+		
 
 		// Panel.
 			$(
@@ -264,3 +266,32 @@
 
 
 	})(jQuery);
+// titlebar
+document.addEventListener("DOMContentLoaded", function() {
+    function fixTitle() {
+        // Falls der Titel "undefined" ist oder leer, wird er auf "" gesetzt
+        if (!document.title || document.title.trim() === "" || document.title === "undefined" || document.title === undefined || document.title.toLowerCase() === "undefined") {
+            document.title = ""; // Titel komplett entfernen
+        }
+    }
+
+    // Sofort ausführen, um den Titel zu fixen
+    fixTitle();
+
+    // Falls irgendein anderes Skript den Titel später überschreibt, wird er alle 500ms korrigiert
+    let titleObserver = new MutationObserver(() => fixTitle());
+    titleObserver.observe(document.querySelector('title'), { childList: true });
+
+    // Falls der Titel nur auf Handys leer sein soll, wird das hier angepasst
+    function checkResponsiveTitle() {
+        if (window.innerWidth < 600) {
+            document.title = ""; // Kein Titel auf Handys
+        } else if (!document.title || document.title.trim() === "" || document.title.toLowerCase() === "undefined") {
+            document.title = "Ahzos - Projekt"; // Standardtitel für größere Bildschirme
+        }
+    }
+
+    // Responsive Titel-Anpassung
+    checkResponsiveTitle();
+    window.addEventListener("resize", checkResponsiveTitle);
+});
