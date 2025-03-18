@@ -365,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 galleryHome: "Home",
                 projectSection: "Projekte",
                 projectSub: "1-3",
+                rdmprojects: "weitere Werke von mir",
                 cats: "Katzen",
                 catNames: "Ponyo & Bibbles",
                 footer: "© Shania Priscilla Kim Sulit."
@@ -382,6 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 galleryHome: "Home",
                 projectSection: "Projects",
                 projectSub: "1-3",
+                rdmprojects: "more works by me",
                 cats: "Cats",
                 catNames: "Ponyo & Bibbles",
                 footer: "© Shania Priscilla Kim Sulit."
@@ -400,6 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('galleryHome').textContent = translations[language].galleryHome;
         document.getElementById('projectSection').textContent = translations[language].projectSection;
         document.getElementById('projectSub').textContent = translations[language].projectSub;
+        document.getElementById('rdmprojects').textContent = translations[language].rdmprojects;
         document.getElementById('cats').textContent = translations[language].cats;
         document.getElementById('catNames').textContent = translations[language].catNames;
         document.querySelector('footer ul.copyright li:first-child').textContent = translations[language].footer;
