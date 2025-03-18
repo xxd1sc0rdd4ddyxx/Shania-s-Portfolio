@@ -35,16 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 bannerTitle: "Ahzos",
                 bannerText: "Schulprojekt mit Luis Thiermann",
                 sectionOneTitle: "Die Reise und die moralischen Entscheidungen",
-                sectionOneText: "Erlebe eine epische Reise...",
-                sectionTwoText: "Im Laufe des Spiels wirst du...",
+                sectionOneText: "Erlebe eine epische Reise durch gefährliche Welten, die durch geschicktes Springen und Laufen überwunden werden müssen. Das Spiel fordert deine Reaktionsfähigkeit heraus und führt dich durch abwechslungsreiche Biome mit spannenden Hindernissen.",
+                sectionTwoText: "Im Laufe des Spiels wirst du mit moralischen Entscheidungen konfrontiert, die deine Wahrnehmung auf die Welt und deine Handlungen in Frage stellen. Entdecke das wahre Wesen des Spiels, während du die dunklen Geheimnisse des Watzmanns entschlüsselst.",
                 sectionThreeTitle: "Was dich im Spiel erwartet",
-                sectionThreeText: "Der Spieler trifft auf verschiedene Herausforderungen...",
+                sectionThreeText: "Der Spieler trifft auf verschiedene Herausforderungen, die immer schwieriger werden, während er voranschreitet. Gegner und Hindernisse verlangen nicht nur schnelle Reaktionen, sondern auch eine sorgfältige Taktik und Planung.",
                 downloadLink: "Download",
-                tilesetTitle: "Tilesets und Hintergründe",
-                tilesetText: "Für das Spiel 'Ahzos' habe ich Tilesets und Hintergründe...",
+                tilesets: "Tilesets und Hintergründe",
+                tilesetText: "Für das Spiel Ahzos habe ich Tilesets und Hintergründe in Aseprite entworfen. Diese Pixel-Art-Grafiken tragen zur retro-inspirierten Atmosphäre des Spiels bei und bilden die visuelle Grundlage für die Spielwelten. Die Tilesets beinhalten interaktive Elemente, während die Hintergründe das Spielerlebnis vertiefen und die Handlung unterstützen.",
                 downloadTilesets: "Download Tilesets",
                 hangmanTitle: "Hangman",
-                hangmanText: "Dieses Minigame, Hangman, wurde als kleines Spiel entwickelt...",
+                hangmanText: "Dieses Minigame, Hangman, wurde als kleines Spiel entwickelt, um den Namen des Spiels Ahzos zu erraten, bevor du das Hauptspiel startest. Viel Spaß beim Erraten!",
                 downloadHangman: "Download Hangman"
             },
             ENG: {
@@ -58,16 +58,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 bannerTitle: "Ahzos",
                 bannerText: "School project with Luis Thiermann",
                 sectionOneTitle: "The Journey and the Moral Choices",
-                sectionOneText: "Embark on an epic journey...",
-                sectionTwoText: "As the game progresses, you will face moral decisions...",
+                sectionOneText: "Experience an epic journey through dangerous worlds that must be overcome through skillful jumping and running. The game challenges your reaction speed and leads you through diverse biomes with exciting obstacles.",
+                sectionTwoText: "Throughout the game, you'll be confronted with moral choices that challenge your perception of the world and your actions. Discover the true nature of the game as you unravel the dark secrets of the Watzmann.",
                 sectionThreeTitle: "What Awaits You in the Game",
-                sectionThreeText: "The player will encounter various challenges...",
+                sectionThreeText: "The player encounters various challenges that become increasingly difficult as they progress. Enemies and obstacles require not only quick reactions but also careful tactics and planning.",
                 downloadLink: "Download",
-                tilesetTitle: "Tilesets and Backgrounds",
-                tilesetText: "For the game 'Ahzos', I designed tilesets and backgrounds...",
+                tilesets: "Tilesets and Backgrounds",
+                tilesetText: "For the Game Ahzos I designed tilesets and backgrounds in Aseprite. These pixel art graphics contribute to the game's retro-inspired atmosphere and form the visual foundation for the game worlds. The tilesets contain interactive elements, while the backgrounds deepen the gameplay experience and support the storyline.",
                 downloadTilesets: "Download Tilesets",
                 hangmanTitle: "Hangman",
-                hangmanText: "This minigame, Hangman, was developed as a small game...",
+                hangmanText: "This minigame, Hangman, was designed as a little game to help you guess the name of the game, Ahzos, before starting the main game. Have fun guessing!",
                 downloadHangman: "Download Hangman"
             }
         };
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateText('sectionThreeTitle', translations[language].sectionThreeTitle);
         updateText('sectionThreeText', translations[language].sectionThreeText);
         updateText('downloadLink', translations[language].downloadLink);
-        updateText('tilesetTitle', translations[language].tilesetTitle);
+        updateText('tilesets', translations[language].tilesets);
         updateText('tilesetText', translations[language].tilesetText);
         updateText('downloadTilesets', translations[language].downloadTilesets);
         updateText('hangmanTitle', translations[language].hangmanTitle);
@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 pageTitle: "The Shattered Reality",
                 pageDescription: "Schulprojekt",
                 gameTitle: 'Erlebe die Welt von "The Shattered Reality"',
-                gameDescription: 'In "The Shattered Reality" begibst du dich auf eine aufregende Reise in einer post-apokalyptischen Welt...',
-                additionalGameDescription: 'Jeder Spieler übernimmt die Rolle eines mutierten Überlebenden mit einzigartigen Fähigkeiten...',
+                gameDescription: 'In "The Shattered Reality" begibst du dich auf eine aufregende Reise in einer post-apokalyptischen Welt, die von Mutanten überrannt wird. Gemeinsam mit deinen Mitspielern musst du eine mystische Wand vervollständigen, um die Realität vor dem Zerfall zu bewahren. Durch das Sammeln von Artefakten, die von gefährlichen Bossen bewacht werden, steht das Schicksal der Welt auf dem Spiel. Dein Team muss zusammenarbeiten, um diese Herausforderung zu meistern und die letzte Hoffnung der Menschheit zu retten.',
+                additionalGameDescription: 'Jeder Spieler übernimmt die Rolle eines mutierten Überlebenden mit einzigartigen Fähigkeiten die auf ihre Klasse abgestimmt sind und strategisch eingesetzt werden müssen, um Kämpfe zu bestehen, Rätsel zu lösen und Ressourcen effizient zu verwalten.',
                 specialFeaturesTitle: 'Besondere Merkmale von "The Shattered Reality"',
                 specialFeaturesText: `
                     <p>Kooperatives Gameplay, bei dem Zusammenarbeit entscheidend ist.</p>
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>Das ultimative Ziel ist es, das letzte Artefakt zu erlangen und die Wand zu vervollständigen.</p>
                     <p>Intensive Bosskämpfe und immer größer werdende Herausforderungen.</p>
                 `,
-                downloadButton: "Download"
+                downloadButton: "Download GDD"
             },
             ENG: {
                 home: "Home",
@@ -172,8 +172,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 pageTitle: "The Shattered Reality",
                 pageDescription: "School Project",
                 gameTitle: 'Experience the world of "The Shattered Reality"',
-                gameDescription: 'In "The Shattered Reality," embark on an exciting journey in a post-apocalyptic world overrun by mutants...',
-                additionalGameDescription: 'Each player takes on the role of a mutated survivor with unique abilities...',
+                gameDescription: 'In "The Shattered Reality," you embark on an exciting journey through a post-apocalyptic world overrun by mutants. Together with your fellow players, you must complete a mystical wall to save reality from disintegration. By collecting artifacts guarded by dangerous bosses, the fate of the world hangs in the balance. Your team must work together to overcome this challenge and save humanitys last hope.',
+                additionalGameDescription: 'Each player takes on the role of a mutated survivor with unique abilities tailored to their class, which must be used strategically to survive battles, solve puzzles, and manage resources efficiently.',
                 specialFeaturesTitle: 'Special Features of "The Shattered Reality"',
                 specialFeaturesText: `
                     <p>Cooperative gameplay where collaboration is key.</p>
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>The ultimate goal is to acquire the final artifact and complete the wall.</p>
                     <p>Intense boss fights and increasingly difficult challenges.</p>
                 `,
-                downloadButton: "Download"
+                downloadButton: "Download GDD"
             }
         };
 
@@ -396,22 +396,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('shatteredRealityLink').textContent = translations[language].shatteredReality;
         document.getElementById('astrabannLink').textContent = translations[language].astrabann;
         document.getElementById('archiveLink').textContent = translations[language].archive;
-        const h3Elements = document.querySelectorAll('h3');
-        const h4Elements = document.querySelectorAll('h4');
-        
-        if (h3Elements.length >= 3) {
-            h3Elements[0].textContent = translations[language].gallery;
-            h3Elements[1].textContent = translations[language].projectSection;
-            h3Elements[2].textContent = translations[language].cats;
-        }
-        
-        if (h4Elements.length >= 3) {
-            h4Elements[0].textContent = translations[language].galleryHome;
-            h4Elements[1].textContent = translations[language].projectSub;
-            h4Elements[2].textContent = translations[language].catNames;
-        }
-        
-        
+        document.getElementById('gallery').textContent = translations[language].gallery;
+        document.getElementById('galleryHome').textContent = translations[language].galleryHome;
+        document.getElementById('projectSection').textContent = translations[language].projectSection;
+        document.getElementById('projectSub').textContent = translations[language].projectSub;
+        document.getElementById('cats').textContent = translations[language].cats;
+        document.getElementById('catNames').textContent = translations[language].catNames;
         document.querySelector('footer ul.copyright li:first-child').textContent = translations[language].footer;
     }
 });

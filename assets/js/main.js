@@ -30,7 +30,7 @@
 					event.preventDefault(); // Verhindert das Standardformularverhalten
 			
 					var form = $(this); // Das Formular
-					var confirmationMessage = $('#confirmationMessage'); // Die Bestätigungsnachricht
+					var confirmationMessage = $('#confirmationMessage');
 			
 					// Formular per AJAX an Formspree senden (kann entfernt werden, wenn du keine AJAX-Nutzung willst)
 					$.ajax({
