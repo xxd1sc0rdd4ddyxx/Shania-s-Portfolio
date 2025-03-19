@@ -6,9 +6,9 @@ Hey, ich bin Shania – kreatives Chaos mit System. Hier dreht sich alles um Cod
 
 Auf dieser Seite findest du alles, was mich und meine Arbeit ausmacht:  
 
-- **Über mich** – Ein kurzer Einblick in meine Interessen, Fähigkeiten und beruflichen Hintergrund.  
+- **Home** – Ein kurzer Einblick in meine Interessen, Fähigkeiten und beruflichen Hintergrund.  
 - **Projekte** – Eine Auswahl meiner bisherigen Arbeiten und spannender Herausforderungen, die ich gemeistert habe.  
-- **Galerie** – Weitere visuelle Eindrücke und persönliche Highlights.  
+- **Archiv** – Weitere visuelle Eindrücke und persönliche Highlights.  
 - **Sprachwahl** – Wechsle zwischen Deutsch und Englisch für eine optimale Darstellung.  
 
 ## Ein Blick ins Portfolio  
