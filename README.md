@@ -1,18 +1,22 @@
-🌐 Mein Portfolio
-Willkommen in meinem Portfolio-Repository! Hier findest du eine Übersicht über meine Projekte, meine Fähigkeiten und ein paar persönliche Einblicke.
+# Mein Portfolio  
 
-🔍 Inhalte
+Hey, ich bin Shania – kreatives Chaos mit System. Hier dreht sich alles um Code, Design und die Projekte, die mich begeistern.
 
-🏠 Home: Eine Vorstellung meiner Person – Hobbys, Fähigkeiten, Berufsbezeichnung und ein paar persönliche Infos.
+## Was dich hier erwartet  
 
-💼 Projekte: Eine Sammlung meiner Arbeiten und Projekte.
+Auf dieser Seite findest du alles, was mich und meine Arbeit ausmacht:  
 
-🖼️ Archiv: Eine Bildergalerie mit weiteren Einblicken.
+- **Über mich** – Ein kurzer Einblick in meine Interessen, Fähigkeiten und beruflichen Hintergrund.  
+- **Projekte** – Eine Auswahl meiner bisherigen Arbeiten und spannender Herausforderungen, die ich gemeistert habe.  
+- **Galerie** – Weitere visuelle Eindrücke und persönliche Highlights.  
+- **Sprachwahl** – Wechsle zwischen Deutsch und Englisch für eine optimale Darstellung.  
 
-🌍 Sprache: Oben rechts kannst du zwischen Deutsch und Englisch wechseln.
+## Ein Blick ins Portfolio  
 
-📷 Vorschau
-![Portfolio Vorschau](https://raw.githubusercontent.com/xxd1sc0rdd4ddyxx/Shania-s-Portfolio/main/images/vorschau.jpg)
+![Portfolio Vorschau](https://raw.githubusercontent.com/xxd1sc0rdd4ddyxx/Shania-s-Portfolio/main/images/vorschau.jpg)  
 
-🙌 Credits
-Design-Template von HTML5UP.
+## Gestaltung  
+
+Die Struktur und das Design basieren auf einer Vorlage von HTML5UP, die ich individuell angepasst habe.  
+
+---
