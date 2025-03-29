@@ -456,7 +456,7 @@ function setLanguage(language) {
             gddTitle: "Game Design Document",
             gddText: "The Game Design Document defines AstraBann's core mechanics, story, and puzzles. The goal is an immersive experience that combines historical knowledge with challenging gameplay.",
             gameplayTemplateTitle: "Gameplay Template (Test Level)",
-            gameplayTemplateText: "TThis early gameplay template serves as a test bed for the basic puzzle mechanics. The current focus is on implementing core features.",
+            gameplayTemplateText: "This early gameplay template serves as a test bed for the basic puzzle mechanics. The current focus is on implementing core features.",
             gameplayTitle: "A Magical Puzzle Adventure in Heidelberg Castle",
             gameplayText: "AstraBann is a story-driven puzzle-platformer that takes players on a magical journey through Heidelberg Castle. Featuring challenging puzzles, historical elements, and collectibles, the game combines education and entertainment. Players explore a realistically recreated environment, solve history-driven quests, and discover hidden artifacts. The immersive story and interactive mechanics encourage curiosity and long-term engagement.",
             gameplayFeaturesTitle: "Gameplay",
